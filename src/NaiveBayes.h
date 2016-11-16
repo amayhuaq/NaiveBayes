@@ -15,6 +15,8 @@
 class NaiveBayes {
 private:
 	Dataset dataset;
+	uint numAttr;
+	uint numCls;
 	std::map<std::string, uint> kClass;
 	std::map<std::string, uint> kAttr;
 	std::vector<float> pCls;

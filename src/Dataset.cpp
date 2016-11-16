@@ -19,26 +19,6 @@ Dataset::Dataset(uint nCls, uint nAttr) {
 Dataset::~Dataset() {
 	// TODO Auto-generated destructor stub
 }
-/*
-Dataset::Dataset(Dataset&& other) {
-	if(this != &other)
-	{
-		numCls = 0; numAttr = 0;
-		trainData.clear();
-		testData.clear();
-
-		numCls = other.numCls;
-		numAttr = other.numAttr;
-		trainData = other.trainData;
-		testData = other.testData;
-
-		other.numCls = 0;
-		other.numAttr = 0;
-		other.trainData.clear();
-		other.testData.clear();
-	}
-}
-*/
 
 Dataset& Dataset::operator =(const Dataset &db) {
 	numAttr = db.numAttr;
@@ -51,13 +31,11 @@ Dataset& Dataset::operator =(const Dataset &db) {
 void Dataset::loadData(string fileName, vector<Pattern> &data) {
 	ifstream fileData(fileName.c_str());
 
-	if(fileData.is_open())
-	{
+	if(fileData.is_open()) {
 		string str, tmp;
 		Pattern patt;
 
-		while(fileData >> str)
-		{
+		while(fileData >> str) {
 			tmp = "";
 			patt.clear();
 			for(auto c : str) {
@@ -73,8 +51,7 @@ void Dataset::loadData(string fileName, vector<Pattern> &data) {
 		}
 		fileData.close();
 	}
-	else
-	{
+	else {
 		cout << "The file is not found" << endl;
 	}
 }
