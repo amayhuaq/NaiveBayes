@@ -72,7 +72,7 @@ void NaiveBayes::train() {
 	for(auto &cls : pCls) {
 		cls = cls * 1.0 / N;
 	}
-
+	/*
 	cout << "\n-- RESULTS TRAINING --\n";
 	for(auto t : kClass) {
 		cout << t.first << " => " << pCls[t.second] << endl;
@@ -81,6 +81,7 @@ void NaiveBayes::train() {
 	for(auto t : kAttr) {
 		cout << t.first << " = " << pAttrCls[t.second][0] << endl;
 	}
+	*/
 }
 
 void NaiveBayes::test() {
